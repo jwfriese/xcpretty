@@ -49,6 +49,7 @@ module XCPretty
     def format_tiffutil(file);                                 EMPTY; end
     def format_write_file(file);                               EMPTY; end
     def format_write_auxiliary_files;                          EMPTY; end
+    def format_other(text);                                    EMPTY; end
 
     # COMPILER / LINKER ERRORS AND WARNINGS
     def format_compile_error(file_name, file_path, reason,
@@ -148,6 +149,9 @@ module XCPretty
         "> #{file_paths.map { |path| path.split('/').last }.join("\n> ")}\n"
     end
 
+    def format_other(text)
+        ""
+    end
 
     private
 
